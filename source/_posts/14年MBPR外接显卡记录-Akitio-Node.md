@@ -35,10 +35,10 @@ tags: [eGPU, 显卡, 系统, 折腾]
 3. 挂载显卡:  
   * 正常开机进入系统;
   * 插入 akitio node 的状态下,在终端进入automate-eGPU.sh所在目录，执行: sudo ./automate-eGPU.sh
-  * 上面脚本会自动安装显卡驱动什么都，正常执行完了，外置显卡应该就能正常使用了。
-![识别到显卡](14年MBPR外接显卡记录-Akitio-Node/0cab9242da55.png)
+  * 上面脚本会自动安装显卡驱动什么的，正常执行完了，外置显卡应该就能正常使用了。
+![识别到显卡](14年MBPR外接显卡记录-Akitio-Node/0cab9242da55.png) （识别到显卡设备）
 ![显示器输出](14年MBPR外接显卡记录-Akitio-Node/b324cbb86b82.png)
-
+（开了f.lux护眼，屏幕泛黄）
 
 
 ### window10
