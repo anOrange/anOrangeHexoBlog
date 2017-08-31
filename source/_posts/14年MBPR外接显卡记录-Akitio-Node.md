@@ -25,7 +25,7 @@ tags: [eGPU, 显卡, 系统, 折腾]
 ### mac os下
 * 我用系统版本为当前最新的稳定版10.12.6，早期版本可能雷电2/3适配器会出现问题。
 * 苹果官方将在秋季正式推出的 10.13 版本中给予外接显卡原生的支持，不过目前的beta版中，只能识别如RX580等A卡。
-* 目前所有版本的mac os系统均不能原生支持外置的N卡，需要使用一个国外大神的脚本（ automate-eGPU.sh: https://github.com/goalque/automate-eGPU.git ）破解。
+* 目前所有版本的mac os系统均不能原生支持外置的N卡，需要使用一个国外大神的脚本（[automate-eGPU.sh]( https://github.com/goalque/automate-eGPU.git)）破解。
 #### 安装流程
 1. macbook 连上 akitio 后，打开电源，应该就能在“系统报告”中识别到 akitio node 设备。(如果显示"unsupport"字样，可能是系统版本或者akitio node固件版本问题，因为之前苹果封禁了akitio node的设备，这个问题可以通过升级系统、升级akitio固件或者执行破解借本解决)
 ![设备信息](14年MBPR外接显卡记录-Akitio-Node/f56e4e5ad2e7.png)
@@ -61,7 +61,7 @@ windows下面操作稍微麻烦点。因为 macbook 开机时，检测到 eGPU �
   安装成功...，显卡被正常识别。enjoy it~
   ![视频设备](14年MBPR外接显卡记录-Akitio-Node/18b18d181541.png)
 
-
+## 效果图
 ##### mac下面的跑分
   ![mac跑分](14年MBPR外接显卡记录-Akitio-Node/44bb42a27f48.png)
 ##### tenserflow识别到设备
