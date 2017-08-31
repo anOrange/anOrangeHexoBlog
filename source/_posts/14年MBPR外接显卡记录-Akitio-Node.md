@@ -68,15 +68,11 @@ windows下面操作稍微麻烦点。因为 macbook 开机时，检测到 eGPU �
   ![tenserflow识别](14年MBPR外接显卡记录-Akitio-Node/d26cdae1da6a.png)
 
 ## 参考资料
-[The Beginner’s eGPU Setup Guide for Mac](https://egpu.io/setup-guide-external-graphics-card-mac/)
-
-[keeping iGPU activated when booting into Windows using apple_set_os.efi](https://egpu.io/forums/mac-setup/how-to-keep-mbps-irisiris-pro-activated-when-booting-into-windows-boot-camp/paged/1/)  
-
-[[Sticky] [SCRIPT] automate-eGPU.sh v1.0.1 - macOS eGPU installation tool](https://egpu.io/forums/mac-setup/automate-egpu-sh-is-reborn-with-amd-polaris-fiji-support-for-macos/#post-1487)  
- 
-[2016 15" Macbook Pro RP450 + GTX1080@32Gbps-TB3 (Razer Core) + GTX1080 internal LCD + Win10 [alec]^](https://egpu.io/forums/mac-setup/internal-display-works-on-amd-2016-macbooks/#post-54)    
-[2015 15" Macbook Pro M370x + GTX1060@16Gbps-TB2 (AKiTiO Node via TB3->TB2 adapter) + Win10 [mdr1a]^ ](https://egpu.io/forums/implementation-guides/2015-macbook-pro-retina-15-tb2-apple-adapter-akitio-node-gtx-1060-win10-success/)  
-
-[eGPU setup 2013 rMBP GT750M + Akitio Thunder2 GTX 1060 (OPTIMUS enabled)](https://www.youtube.com/watch?v=AR_7DPtXWZA) 
-[](https://egpu.io/forums/pc-setup/fix-dsdt-override-to-correct-error-12/)
+* [The Beginner’s eGPU Setup Guide for Mac](https://egpu.io/setup-guide-external-graphics-card-mac/)  
+* [keeping iGPU activated when booting into Windows using apple_set_os.efi](https://egpu.io/forums/mac-setup/how-to-keep-mbps-irisiris-pro-activated-when-booting-into-windows-boot-camp/paged/1/)  
+* [[Sticky] [SCRIPT] automate-eGPU.sh v1.0.1 - macOS eGPU installation tool](https://egpu.io/forums/mac-setup/automate-egpu-sh-is-reborn-with-amd-polaris-fiji-support-for-macos/#post-1487)  
+* [2016 15" Macbook Pro RP450 + GTX1080@32Gbps-TB3 (Razer Core) + GTX1080 internal LCD + Win10 [alec]^](https://egpu.io/forums/mac-setup/internal-display-works-on-amd-2016-macbooks/#post-54)    
+* [2015 15" Macbook Pro M370x + GTX1060@16Gbps-TB2 (AKiTiO Node via TB3->TB2 adapter) + Win10 [mdr1a]^ ](https://egpu.io/forums/implementation-guides/2015-macbook-pro-retina-15-tb2-apple-adapter-akitio-node-gtx-1060-win10-success/)  
+* [eGPU setup 2013 rMBP GT750M + Akitio Thunder2 GTX 1060 (OPTIMUS enabled)](https://www.youtube.com/watch?v=AR_7DPtXWZA) 
+* [[GUIDE] DSDT override eGPU error 12 fix](https://egpu.io/forums/pc-setup/fix-dsdt-override-to-correct-error-12/)
 
