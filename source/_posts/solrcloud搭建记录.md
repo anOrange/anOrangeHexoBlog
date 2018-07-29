@@ -116,8 +116,8 @@ categories: solr
   syncLimit=5
   dataDir=/home/work/data/zookeeper-data
   dataLogDir=/home/work/data/zookeeper-data/logs
-  server.1=BOE-Newsearch-08:2888:3888
-  server.2=BOE-Newsearch-07:2888:3888
+  server.1=BOE-server-08:2888:3888
+  server.2=BOE-server-07:2888:3888
   #zookeeper的节点列表，格式如下
   #server.节点编号=节点host:通信端口:选主端口
   #...
@@ -161,7 +161,7 @@ categories: solr
   ```
   在 catalina_zk.sh 中添加下面参数:
   ```
-  JAVA_OPTS="$JAVA_OPTS -DzkHost=BOE-Newsearch-08:2181,BOE-Newsearch-07:2181,EON-newSearch-06:2181"
+  JAVA_OPTS="$JAVA_OPTS -DzkHost=BOE-server-08:2181,BOE-server-07:2181,EON-server-06:2181"
   ```
   使用startup_zk.sh 脚本启动solr，就可以以cloud模式启动solr了。  
   此时再进入 solr 管理后台，Logging选项下面就会多出一个cloud分栏的选项了。
@@ -177,7 +177,7 @@ categories: solr
   ```
   #!/bin/sh
   configName=$1
-  zkHost=BOE-Newsearch-08:2181,BOE-Newsearch-07:2181,EON-newSearch-06:2181
+  zkHost=BOE-server-08:2181,BOE-server-07:2181,EON-server-06:2181
   if [ -z "$configName" ]; then
     echo "配置名为空"
     echo "exit 1"
@@ -227,7 +227,7 @@ categories: solr
   2) 上传到zookeeper根目录  
   在solr解压目录下，执行:
   ```
-  ./bin/solr zk cp file:/home/work/solrspace/security.json zk:/security.json -z BOE-Newsearch-08:2181,BOE-Newsearch-07:2181
+  ./bin/solr zk cp file:/home/work/solrspace/security.json zk:/security.json -z BOE-server-08:2181,BOE-server-07:2181
   ```
   3) 使用账户名为"solr"，密码为"SolrRocks"认证就可以以admin的角色访问solr访问solrAdmin。给予这个权限，可以使用webapi添加修改用户或者给用户各个节点不同的读写权限，具体配置可以看[文档](http://people.apache.org/~ctargett/RefGuidePOC/jekyll-full/rule-based-authorization-plugin.html)。
   
@@ -243,15 +243,15 @@ categories: solr
   2) 给目录添加digest权限  
     先登录zookeeper，进入zookeeper的bin目录，执行指令：
     ```
-    ./zkCli.sh -server BOE-Newsearch-08
+    ./zkCli.sh -server BOE-server-08
     ```
     完成后应该就登录到服务器设置权限了:
     ```
-    [zk: BOE-Newsearch-08(CONNECTED) 0] setAcl /collections digest:username:+Ir5sN1lGJEEs8xBZhZXKvjLJ7c=:rwacd
+    [zk: BOE-server-08(CONNECTED) 0] setAcl /collections digest:username:+Ir5sN1lGJEEs8xBZhZXKvjLJ7c=:rwacd
     ```
     设置完成后可以用过下面命令查看刚才设置的权限:
     ```
-    [zk: BOE-Newsearch-08(CONNECTED) 1] getAcl /collections
+    [zk: BOE-server-08(CONNECTED) 1] getAcl /collections
     'digest,'username:+Ir5sN1lGJEEs8xBZhZXKvjLJ7c=
     : cdrwa
     ```
@@ -267,7 +267,7 @@ categories: solr
     ```
     #!/bin/sh
     configName=$1
-    zkHost=BOE-Newsearch-08:2181,BOE-Newsearch-07:2181,EON-newSearch-06:2181
+    zkHost=BOE-server-08:2181,BOE-server-07:2181,EON-server-06:2181
     if [ -z "$configName" ]; then
       echo "配置名为空"
       echo "exit 1"
@@ -283,7 +283,7 @@ categories: solr
     java -classpath .:$(cd `dirname $0`; pwd)/../tomcat8/webapps/solr/WEB-INF/lib/* \
     -DzkACLProvider=org.apache.solr.common.cloud.VMParamsAllAndReadonlyDigestZkACLProvider \
     -DzkCredentialsProvider=org.apache.solr.common.cloud.VMParamsSingleSetCredentialsDigestZkCredentialsProvider \
-    -DzkDigestUsername=admin-user -DzkDigestPassword=tripSolr@123456-O \
+    -DzkDigestUsername=admin-user -DzkDigestPassword=密码 \
     org.apache.solr.cloud.ZkCLI -cmd upconfig \
     -zkhost $zkHost \
     -confdir $configPath -confname $configName
