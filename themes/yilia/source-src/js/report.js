@@ -1,6 +1,6 @@
 var jsCookie = require('js-cookie')
 
-require('badjs-report')
+// require('badjs-report')
 
 function getQueryString(name) { 
 	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
@@ -9,6 +9,7 @@ function getQueryString(name) {
 } 
 // 统计用，开发者不需要理会
 if (window.BJ_REPORT) {
+	/*
 	BJ_REPORT.init({
   		id: 1
 	});
@@ -47,6 +48,7 @@ if (window.BJ_REPORT) {
 			jsCookie.remove(fromKey);
 		}
 	}
+	*/
 }
 
 module.exports = {

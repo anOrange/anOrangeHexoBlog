@@ -12,7 +12,7 @@ timezone: Asia/Chongqing
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://skyvoid.com
+url: http://blog.skyvoid.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -69,8 +69,16 @@ theme: yilia
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: git@github.com:anOrange/anOrange.github.io.git
+  # type: git
+  # repo: git@github.com:anOrange/anOrange.github.io.git
+  type: rsync
+  host: blog.skyvoid.com
+  user: work
+  root: /home/work/www/blog
+  port: 22
+  delete: true
+  verbose: true
+  ignore_errors: true
 
 
 jsonContent:
