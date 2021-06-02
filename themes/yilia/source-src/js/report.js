@@ -1,4 +1,4 @@
-var jsCookie = require('js-cookie')
+// var jsCookie = require('js-cookie')
 
 // require('badjs-report')
 
